@@ -3,13 +3,14 @@ var path = require('path');
 
 module.exports = {
 
-    'test CreateFileOnStartup': function(beforeExit, assert){
+    'testCreateFileOnStartup': function(test){
         var testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
         var storage = new Storage(testFile);
-        assert.ok(path.existsSync(testFile));
+        test.ok(path.existsSync(testFile));
+        test.done();
     },
 
-    'test ReadFileOnStartup': function(beforeExit, assert){
+    'testReadFileOnStartup': function(test){
         var testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
         var storage = new Storage(testFile);
         testTasks = [
@@ -27,7 +28,8 @@ module.exports = {
 
         storage = undefined;
         var storage2 = new Storage(testFile);
-        assert.eql(storage2.tasks, testTasks);
+        test.deepEqual(storage2.tasks, testTasks);
+        test.done();
     }
 
 };
