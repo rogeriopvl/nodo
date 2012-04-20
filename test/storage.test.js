@@ -3,14 +3,14 @@ var path = require('path');
 
 module.exports = {
 
-    'testCreateFileOnStartup': function(test){
+    testCreateFileOnStartup: function(test){
         var testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
         var storage = new Storage(testFile);
         test.ok(path.existsSync(testFile));
         test.done();
     },
 
-    'testReadFileOnStartup': function(test){
+    testReadFileOnStartup: function(test){
         var testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
         var storage = new Storage(testFile);
         testTasks = [
