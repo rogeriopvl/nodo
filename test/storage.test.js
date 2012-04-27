@@ -9,8 +9,15 @@ module.exports = {
         test.ok(path.existsSync(testFile));
         test.done();
     },
+    
+    testHasInboxListOnStartup: function(test){
+        var testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
+        var storage = new Storage(testFile);
+        test.ok(storage.lists.inbox);
+        test.done();
+    }
 
-    testReadFileOnStartup: function(test){
+    /*testReadFileOnStartup: function(test){
         var testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
         var storage = new Storage(testFile);
         testTasks = [
@@ -23,13 +30,13 @@ module.exports = {
                 message: 'testing message 2'
             }
         ];
-        storage.tasks = testTasks;
+        storage.lists = testTasks;
         storage.save();
 
         storage = undefined;
         var storage2 = new Storage(testFile);
         test.deepEqual(storage2.tasks, testTasks);
         test.done();
-    }
+    }*/
 
 };
