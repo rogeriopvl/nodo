@@ -13,7 +13,7 @@ module.exports = {
     testHasInboxListOnStartup: function(test){
         var testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
         var storage = new Storage(testFile);
-        test.ok(storage.lists.inbox);
+        test.ok(storage.lists[0].inbox);
         test.done();
     }
 
