@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
 
     setUp: function(callback){
-        this.testFile = '/Users/rogeriopvl/Documents/projects/nodo/nodo.db';
+        this.testFile = '/tmp/nodo.db';
         callback();
     },
 
@@ -36,6 +36,11 @@ module.exports = {
         storage = undefined;
         var storage2 = new Storage(this.testFile);
         test.deepEqual(storage2.lists, testTasks);
+
+        // clean the file for the next tests
+        storage2.lists = { "inbox": [] };
+        storage2.save();
+
         test.done();
     },
 
@@ -55,6 +60,15 @@ module.exports = {
         storage.addList('testlist');
         test.ok(storage.hasList('testlist'));
         test.ok(storage.lists.testlist);
+
+        // test adding already existing lists
+        test.ok(!storage.addList('inbox'));
+        test.ok(!storage.addList('testlist'));
+
+        // clean the file for the next tests
+        storage.lists = { "inbox": [] };
+        storage.save();
+
         test.done();
     },
 
@@ -67,6 +81,9 @@ module.exports = {
         test.ok(!storage.hasList('testlist'));
         test.ok(!storage.lists.testlist);
 
+        // there should be 1 list after removing this one
+        test.equal(Object.keys(storage.lists).length, 1);
+
         // testing adding 3 lists and removing the middle one
         storage.addList('list1');
         storage.addList('list2');
@@ -78,6 +95,48 @@ module.exports = {
         // there should be 3 lists after removing this one
         test.equal(Object.keys(storage.lists).length, 3);
 
+        // test removing 2 items in a row
+        storage.deleteList('list1');
+        storage.deleteList('list3');
+        test.ok(!storage.hasList('list1'));
+        test.ok(!storage.lists.list1);
+        test.ok(!storage.hasList('list3'));
+        test.ok(!storage.lists.list3);
+
+        test.equal(Object.keys(storage.lists).length, 1);
+
+        // test delete non existant item
+        test.ok(!storage.deleteList('list3'));
+
+        // clean the file for the next tests
+        storage.lists = { "inbox": [] };
+        storage.save();
+
+        test.done();
+    },
+
+    testAddTask: function(test){
+        var storage = new Storage(this.testFile);
+        test.ok(storage.addTask('inbox', 'task1'));
+        test.equal(storage.lists.inbox.length, 1);
+        test.equal(storage.lists.inbox[0].title, 'task1');
+
+        // add task to non existant list
+        test.ok(!storage.addTask('lulz', 'task2'));
+
+        test.done();
+    },
+
+    testDeleteTask: function(test){
+        var storage = new Storage(this.testFile);
+        test.ok(storage.deleteTask('inbox', 0));
+        test.equal(storage.lists.inbox.length, 0);
+        test.done();
+    },
+
+    testGetTasksByList: function(test){
+        // TODO
+        var storage = new Storage(this.testFile);
         test.done();
     }
 
