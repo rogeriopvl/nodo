@@ -9,4 +9,8 @@ module.exports = function(grunt){
     });
 
     grunt.registerTask('default', 'lint test');
+
+    grunt.registerTask('example', 'just a custom example task', function(){
+        // insert task code here
+    });
 };
