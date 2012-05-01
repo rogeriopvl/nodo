@@ -108,7 +108,7 @@ module.exports = {
         // test delete non existant item
         test.ok(!storage.deleteList('list3'));
 
-        // clean the file for the next tests
+        // clekn the file for the next tests
         storage.lists = { "inbox": [] };
         storage.save();
 
@@ -135,8 +135,15 @@ module.exports = {
     },
 
     testGetTasksByList: function(test){
-        // TODO
         var storage = new Storage(this.testFile);
+        storage.addTask('inbox', 'task1');
+        storage.addTask('inbox', 'task2');
+
+        var inboxTasks = storage.getTasksByList('inbox');
+        test.equal(inboxTasks.length, 2);
+        test.equal(inboxTasks[0].title, 'task1');
+        test.equal(inboxTasks[1].title, 'task2');
+
         test.done();
     }
 
