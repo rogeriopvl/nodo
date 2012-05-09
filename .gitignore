@@ -1,3 +1,3 @@
 .DS_Store
 node_modules/
-nodo.db
+test/test.db
