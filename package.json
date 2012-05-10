@@ -16,7 +16,14 @@
         "colors": ">=0.6.0",
         "sqlite3": ">=2.1.3"
     },
-    "bin": { "nodo": "./bin/nodo" },
+    "directories": {
+        "lib": "./lib",
+        "samples": "./samples"
+    },
+    "bin": {
+        "nodo": "./bin/nodo",
+        "nodo-install-db": "./bin/nodo-install-db"
+    },
     "licenses": {
         "type": "MIT",
         "url": "http://github.com/rogeriopvl/nodo/LICENSE"
