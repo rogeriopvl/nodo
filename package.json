@@ -1,6 +1,6 @@
 {
     "name": "nodo",
-    "description": "Simple and easy Todo app for the command-line with portable database.",
+    "description": "Command line todo app compatible with Wunderlist database.",
     "maintainers":[
         {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
     ],
