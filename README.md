@@ -60,8 +60,8 @@ You can rename and/or move you database file as long as you update your config f
 
         nodo move <task_id> <list_name>  Moves a task to a list
 
-        nodo remove list <list_name>     Delete list
-        nodo remove task <task_id>       Delete task
+        nodo delete list <list_name>     Delete list
+        nodo delete task <task_id>       Delete task
 
         nodo restore <task_id>           Restore task
         nodo restore task <task_id>      Restore task
