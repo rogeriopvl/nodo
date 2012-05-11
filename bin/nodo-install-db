@@ -2,16 +2,23 @@
 
 var config = require('../lib/config'),
     path = require('path'),
+    colors = require('colors'),
     exec = require('child_process').exec;
 
-if (!path.existsSync(config.file.database.location)){
+// this sucks, path.normalize should  accept the home alias...
+var databaseLocation = config.file.database.location.replace(/~\//g, process.env.HOME + '/');
+
+console.log('Creating database in ' + databaseLocation);
+
+if (!path.existsSync(databaseLocation)){
     var cpCommand = 'cp ' + __dirname + '/../samples/nodo.db_sample ' + config.file.database.location;
     exec(cpCommand, function(err, stdout, stderr){
         if (err){
             console.log(err.toString());
         }
     });
+    console.log('Done.'.green);
 }
 else{
-    console.log('Database file already exists. Remove it first if you really wish to create a new one.');
+    console.log('Database file already exists. Remove it first if you really wish to create a new one.'.red);
 }
