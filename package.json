@@ -1,6 +1,7 @@
 {
     "name": "nodo",
     "description": "Command line todo app compatible with Wunderlist database.",
+    "author": "Rogério Vicente <rogeriopvl@gmail.com>",
     "keywords": ["nodo", "todo", "wunderlist", "cli"],
     "maintainers":[
         {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
