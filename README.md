@@ -71,4 +71,10 @@ You can rename and/or move you database file as long as you update your config f
 
 Nodo is in it's early versions. If you find any problems using Nodo, please report them back to me by opening an issue on Github.
 
+## Credits
+
+Thanks to:
+
+* Pedro Faria, for his precious help in debugging Nodo on Linux.
+
 [0]: http://wunderlist.com
