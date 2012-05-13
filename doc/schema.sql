@@ -23,3 +23,7 @@ CREATE TABLE IF NOT EXISTS lists (
     inbox INTEGER DEFAULT 0,
     shared INTEGER DEFAULT 0
 );
+
+INSERT INTO lists (name, inbox) VALUES ('inbox', 1);
+INSERT INTO tasks (name, list_id) VALUES ('Sample task', 1);
+INSERT INTO tasks (name, list_id) VALUES ('Another sample task.', 1);
