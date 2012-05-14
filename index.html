@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Nodo by rogeriopvl</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Nodo</h1>
+        <h2>Command line todo app compatible with Wunderlist database</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/rogeriopvl/nodo/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/rogeriopvl/nodo/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/rogeriopvl/nodo" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>Nodo</h1>
+
+<h2>About</h2>
+
+<p>Nodo is a command line TODO application that uses a portable database file. Also, if you are a <a href="http://wunderlist.com">Wunderlist</a> user, you can configure Nodo to be a command line interface to Wunderlist's database.</p>
+
+<p>The name "Nodo" comes from the mix of the words Node and TODO.</p>
+
+<h2>Install</h2>
+
+<p>Nodo is available as a package in the npm registry, so you can install it with:</p>
+
+<pre><code>npm install -g nodo
+</code></pre>
+
+<p>At install, Nodo creates a default configuration file (<code>~/.nodorc</code>) and a default local database (<code>~/.nodo.db</code>) with some sample tasks just to get you started.
+You can rename and/or move you database file as long as you update your config file to reflect it's current location.</p>
+
+<h3>Using Wunderlist database</h3>
+
+<p>I you wan't to use the Wunderlist database with Nodo you need to edit the config file and make sure that the database location parameter has the Wunderlist database file path. For instance in Mac OSX, the Wunderlist database file is at <code>~/Library/Wunderlist/wunderlist.db</code>, so just make your config file look like this:</p>
+
+<pre><code>{
+    "database": {
+        "location": "~/Library/Wunderlist/wunderlist.db",
+    }
+}
+</code></pre>
+
+<p>And you'll be all set to organize your day like a hacker!</p>
+
+<p><em>Important:</em> Nodo does not delete any data in the Wunderlist database. Even if you delete tasks, they are just marked as deleted, and can be recovered with the <code>nodo restore</code> command.</p>
+
+<h2>Usage</h2>
+
+<pre><code>Usage: nodo &lt;action&gt; [arguments]
+
+  Available actions and options:
+    nodo show                        Show all lists and tasks todo
+    nodo show all                    Same as above
+    nodo show lists                  Show all lists and number of tasks in each one.
+    nodo show &lt;list_name&gt;            Show content of list
+    nodo show done                   Show all done tasks
+    nodo show deleted                Show all deleted tasks
+    nodo show task &lt;task_id&gt;         Show detail of a task
+
+    nodo add list &lt;list_name&gt;        Add a new list
+    nodo add &lt;list_name&gt; &lt;task_name&gt; Add a new task to list
+
+    nodo done &lt;task_id&gt;              Mark a task as done
+    nodo undo &lt;task_id&gt;              Mark a task as not done
+
+    nodo move &lt;task_id&gt; &lt;list_name&gt;  Moves a task to a list
+
+    nodo delete list &lt;list_name&gt;     Delete list
+    nodo delete task &lt;task_id&gt;       Delete task
+
+    nodo restore &lt;task_id&gt;           Restore task
+    nodo restore task &lt;task_id&gt;      Restore task
+    nodo restore list &lt;list_name&gt;    Restore list
+</code></pre>
+
+<h2>Bug Report</h2>
+
+<p>Nodo is in it's early versions. If you find any problems using Nodo, please report them back to me by opening an issue on Github.</p>
+
+<h2>Credits</h2>
+
+<p>Thanks to:</p>
+
+<ul>
+<li>Pedro Faria, for his precious help in debugging Nodo on Linux.</li>
+</ul>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-31643051-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
