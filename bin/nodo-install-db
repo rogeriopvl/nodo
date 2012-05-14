@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+/**
+ * Database install script
+ * This script should run on npm install and creates a clean sqlite3 database
+ * with the schema created and some default tasks.
+ */
+
 var config = require('../lib/config'),
     path = require('path'),
     colors = require('colors'),

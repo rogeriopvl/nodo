@@ -26,6 +26,9 @@
         "nodo": "./bin/nodo",
         "nodo-install-db": "./bin/nodo-install-db"
     },
+    "scripts": {
+        "install": "./bin/nodo-install-db"
+    },
     "licenses": [
         {
             "type": "MIT",
