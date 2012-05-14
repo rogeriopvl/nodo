@@ -27,7 +27,7 @@
         "nodo-install": "./bin/nodo-install"
     },
     "scripts": {
-        "install": "./bin/nodo-install-db"
+        "install": "./bin/nodo-install"
     },
     "licenses": [
         {
