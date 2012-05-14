@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+/**
+ * Post install script that creates config file and local database
+ * with the schema and some default tasks.
+ * 
+ * @author Rogério Vicente <rogeriopvl@gmail.com>
+ * @license MIT (check the license file)
+ */
+
+var config = require('../lib/config'),
+    path = require('path'),
+    colors = require('colors'),
+    exec = require('child_process').exec;
+
+console.log('****************************************');
+console.log('* Running Nodo installation script...');
+console.log('****************************************');
+
+if (!path.existsSync(config.path)){
+    console.log('Creating config file in ' + config.path + ' ...');
+
+    var cpCommand = 'cp ' + __dirname + '/../samples/nodorc_sample ' + config.path;
+    exec(cpCommand, function(err, stdout, stderr){
+        if (err){
+            console.log(err.toString());
+            process.exit(-1);
+        }
+        
+        console.log('Done.'.green);
+
+        // remove the module cache, to update the new generated configs
+        delete require.cache[path.resolve(__dirname + '/../lib/config.js')];
+        var config = require('../lib/config');
+        createDatabase(config.file.database.location);
+    });
+}
+else{
+    console.log('Config file already exists. Skipping...'.yellow);
+    createDatabase(config.file.database.location);
+}
+
+function createDatabase(dbPath){
+        // this sucks, path.normalize should  accept the home alias...
+        var databaseLocation = dbPath.replace(/~\//g, process.env.HOME + '/');
+
+
+        if (!path.existsSync(databaseLocation)){
+            console.log('Creating database in ' + databaseLocation);
+
+            var cpCommand = 'cp ' + __dirname + '/../samples/nodo.db_sample ' + dbPath;
+            exec(cpCommand, function(err, stdout, stderr){
+                if (err){
+                    console.log(err.toString());
+                }
+            });
+            console.log('Done.'.green);
+        }
+        else{
+            console.log('Database file already exists. Remove it first if you really wish to create a new one, then run the nodo-install command.'.red);
+        }
+}
