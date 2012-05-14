@@ -33,7 +33,7 @@ If you don't want or don't use Wunderlist, you can start a local database from s
 
 To create a local database you need to run a different command:
 
-    nodo-install-db
+    nodo-install
 
 This creates a new sqlite3 database and respective tables, ready to be used.
 
