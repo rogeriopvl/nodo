@@ -24,7 +24,7 @@
     },
     "bin": {
         "nodo": "./bin/nodo",
-        "nodo-install-db": "./bin/nodo-install-db"
+        "nodo-install": "./bin/nodo-install"
     },
     "scripts": {
         "install": "./bin/nodo-install-db"
