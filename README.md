@@ -2,11 +2,9 @@
 
 ## About
 
-Nodo is a command line todo application that can be used with the [Wunderlist][0] database. And this means that Nodo can be a command line interface for Wunderlist if you configure it to use that database.
+Nodo is a command line TODO application that uses a portable database file. Also, if you are a [Wunderlist][0] user, you can configure Nodo to be a command line interface to Wunderlist's database.
 
-Nodo is developed with node.js and a sqlite3 database.
-
-The name "Nodo" comes from the mix of Node and Todo.
+The name "Nodo" comes from the mix of the words Node and TODO.
 
 ## Install
 
@@ -14,10 +12,11 @@ Nodo is available as a package in the npm registry, so you can install it with:
 
     npm install -g nodo
 
-The first time you run Nodo, it creates a config file `~/.nodorc` in your home folder.
+At install, Nodo creates a default configuration file (`~/.nodorc`) and a default local database (`~/.nodo.db`) with some sample tasks just to get you started.
+You can rename and/or move you database file as long as you update your config file to reflect it's current location.
 
 ### Using Wunderlist database
-You need to edit that file and make sure that the database location is correct. If you want to use the Wunderlist database, you need to edit the database.location. For example in Mac OSX, the Wunderlist database file is at `~/Library/Wunderlist/wunderlist.db`, so just make your config file look like this:
+I you wan't to use the Wunderlist database with Nodo you need to edit the config file and make sure that the database location parameter has the Wunderlist database file path. For instance in Mac OSX, the Wunderlist database file is at `~/Library/Wunderlist/wunderlist.db`, so just make your config file look like this:
 
     {
         "database": {
@@ -27,17 +26,7 @@ You need to edit that file and make sure that the database location is correct. 
 
 And you'll be all set to organize your day like a hacker!
 
-### Using local database
-
-If you don't want or don't use Wunderlist, you can start a local database from scratch. Although I seriously recommend Wunderlist, because it's an awesome app, and you get it also on mobile with sync included.
-
-To create a local database you need to run a different command:
-
-    nodo-install
-
-This creates a new sqlite3 database and respective tables, ready to be used.
-
-You can rename and/or move you database file as long as you update your config file to reflect it's current location.
+*Important:* Nodo does not delete any data in the Wunderlist database. Even if you delete tasks, they are just marked as deleted, and can be recovered with the `nodo restore` command.
 
 ## Usage
 
