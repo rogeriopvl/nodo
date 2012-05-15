@@ -40,6 +40,8 @@ else{
     createDatabase(config.file.database.location);
 }
 
+console.log('Nodo installation is complete.'.green);
+
 function createDatabase(dbPath){
         // this sucks, path.normalize should  accept the home alias...
         var databaseLocation = dbPath.replace(/~\//g, process.env.HOME + '/');
@@ -52,11 +54,12 @@ function createDatabase(dbPath){
             exec(cpCommand, function(err, stdout, stderr){
                 if (err){
                     console.log(err.toString());
+                    process.exit(-1);
                 }
             });
             console.log('Done.'.green);
         }
         else{
-            console.log('Database file already exists. Remove it first if you really wish to create a new one, then run the nodo-install command.'.red);
+            console.log('Database file already exists. Skipping...'.yellow);
         }
 }
