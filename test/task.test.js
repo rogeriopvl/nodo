@@ -9,7 +9,7 @@ module.exports = {
     },
 
     testAdd: function(test){
-        var newTask = {list: 'Inbox', name: 'testing', dueDate: 0};
+        var newTask = {list: 'inbox', name: 'testing', dueDate: 0};
         this.task.add(newTask, function(err, result){
             test.ifError(err);
             test.ok(result.lastId);
