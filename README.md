@@ -47,6 +47,9 @@ And you'll be all set to organize your day like a hacker!
         nodo done <task_id>              Mark a task as done
         nodo undo <task_id>              Mark a task as not done
 
+        nodo star <task_id>              Mark a task as important
+        nodo unstar <task_id>            Mark a task as not important
+
         nodo move <task_id> <list_name>  Moves a task to a list
 
         nodo delete list <list_name>     Delete list
