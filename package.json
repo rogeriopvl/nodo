@@ -6,7 +6,7 @@
     "maintainers":[
         {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
     ],
-    "version": "0.3.0",
+    "version": "0.3.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/rogeriopvl/nodo"
