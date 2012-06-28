@@ -9,7 +9,7 @@
  */
 
 var config = require('../lib/config'),
-    path = require('path'),
+    fs = require('fs'),
     colors = require('colors'),
     exec = require('child_process').exec;
 
@@ -17,7 +17,7 @@ console.log('****************************************');
 console.log('* Running Nodo installation script...');
 console.log('****************************************');
 
-if (!path.existsSync(config.path)){
+if (!fs.existsSync(config.path)){
     console.log('Creating config file in ' + config.path + ' ...');
 
     var cpCommand = 'cp ' + __dirname + '/../samples/nodorc_sample ' + config.path;
@@ -47,7 +47,7 @@ function createDatabase(dbPath){
         var databaseLocation = dbPath.replace(/~\//g, process.env.HOME + '/');
 
 
-        if (!path.existsSync(databaseLocation)){
+        if (!fs.existsSync(databaseLocation)){
             console.log('Creating database in ' + databaseLocation);
 
             var cpCommand = 'cp ' + __dirname + '/../samples/nodo.db_sample ' + dbPath;
