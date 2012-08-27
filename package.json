@@ -1,41 +1,50 @@
 {
-    "name": "nodo",
-    "description": "Command line todo app compatible with Wunderlist database.",
-    "author": "Rogério Vicente <rogeriopvl@gmail.com>",
-    "keywords": ["nodo", "todo", "wunderlist", "cli"],
-    "maintainers":[
-        {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
-    ],
-    "version": "0.3.2",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rogeriopvl/nodo"
-    },
-    "devDependencies": {
-        "nodeunit": ">=0.7.4"
-    },
-    "dependencies": {
-        "colors": ">=0.6.0",
-        "sqlite3": ">=2.1.5"
-    },
-    "engines": {
-        "node": ">=0.8.0"
-    },
-    "directories": {
-        "lib": "./lib",
-        "samples": "./samples"
-    },
-    "bin": {
-        "nodo": "./bin/nodo",
-        "nodo-install": "./bin/nodo-install"
-    },
-    "scripts": {
-        "install": "./bin/nodo-install"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://github.com/rogeriopvl/nodo/LICENSE"
-        }
-    ]
+  "name": "nodo",
+  "description": "Command line todo app compatible with Wunderlist database.",
+  "author": "Rogério Vicente <rogeriopvl@gmail.com>",
+  "keywords": [
+    "nodo",
+    "todo",
+    "wunderlist",
+    "cli"
+  ],
+  "maintainers": [
+    {
+      "name": "Rogério Vicente",
+      "web": "http://rogeriopvl.com"
+    }
+  ],
+  "version": "0.3.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rogeriopvl/nodo"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.7.4"
+  },
+  "dependencies": {
+    "colors": "~0.6.0",
+    "sqlite3": "~2.1.5",
+    "grunt": "~0.3.13"
+  },
+  "engines": {
+    "node": "~0.8.0"
+  },
+  "directories": {
+    "lib": "./lib",
+    "samples": "./samples"
+  },
+  "bin": {
+    "nodo": "./bin/nodo",
+    "nodo-install": "./bin/nodo-install"
+  },
+  "scripts": {
+    "install": "./bin/nodo-install"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/rogeriopvl/nodo/LICENSE"
+    }
+  ]
 }
