@@ -2,7 +2,7 @@
 
 ## About
 
-Nodo is a command line TODO application that uses a portable database file. Also, if you are a [Wunderlist][0] user, you can configure Nodo to be a command line interface to Wunderlist's database.
+Nodo is a command line TODO application that uses a portable database file. Also, if you are a [Wunderlist][0] user, you can configure Nodo to be a command line interface to Wunderlist's database (only for version 1.* of Wunderlist).
 
 The name "Nodo" comes from the mix of the words Node and TODO.
 
@@ -15,7 +15,10 @@ Nodo is available as a package in the npm registry, so you can install it with:
 At install, Nodo creates a default configuration file (`~/.nodorc`) and a default local database (`~/.nodo.db`) with some sample tasks just to get you started.
 You can rename and/or move you database file as long as you update your config file to reflect it's current location.
 
-### Using Wunderlist database
+### Using Wunderlist database (only for Wunderlist 1.*)
+
+*Important:* Nodo is not compatible with Wunderlist 2. And I don't plan to fix this in the near future unless there's high demand.
+
 I you wan't to use the Wunderlist database with Nodo you need to edit the config file and make sure that the database location parameter has the Wunderlist database file path. For instance in Mac OSX, the Wunderlist database file is at `~/Library/Wunderlist/wunderlist.db`, so just make your config file look like this:
 
     {
