@@ -1,12 +1,12 @@
 {
     "name": "nodo",
-    "description": "Command line todo app compatible with Wunderlist database.",
+    "description": "Command line todo app.",
     "author": "Rogério Vicente <rogeriopvl@gmail.com>",
     "keywords": ["nodo", "todo", "wunderlist", "cli"],
     "maintainers":[
         {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
     ],
-    "version": "0.3.2",
+    "version": "0.3.3",
     "repository": {
         "type": "git",
         "url": "https://github.com/rogeriopvl/nodo"
