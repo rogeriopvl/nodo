@@ -10,6 +10,7 @@
 
 var config = require('../lib/config'),
     fs = require('fs'),
+    path = require('path'),
     colors = require('colors'),
     exec = require('child_process').exec;
 
