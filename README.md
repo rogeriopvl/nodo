@@ -1,4 +1,4 @@
-# Nodo
+# Nodo [![Build Status](https://travis-ci.org/rogeriopvl/nodo.png)](https://travis-ci.org/rogeriopvl/nodo)
 
 ## About
 
