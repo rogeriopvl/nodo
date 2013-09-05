@@ -31,6 +31,10 @@ And you'll be all set to organize your day like a hacker!
 
 *Important:* Nodo does not delete any data in the Wunderlist database. Even if you delete tasks, they are just marked as deleted, and can be recovered with the `nodo restore` command.
 
+## First Run
+
+On the first run nodo asks your permission to anonymously track some usage patterns. This is very useful to improve nodo, but completely optional and anonymous. Only major commands like `show`, `help`, `list`, etc are tracked. Their respective arguments are not tracked.
+
 ## Usage
 
     Usage: nodo <action> [arguments]
