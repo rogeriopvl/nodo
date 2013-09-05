@@ -3,7 +3,7 @@
 /**
  * Post install script that creates config file and local database
  * with the schema and some default tasks.
- * 
+ *
  * @author Rogério Vicente <rogeriopvl@gmail.com>
  * @license MIT (check the license file)
  */
@@ -27,7 +27,7 @@ if (!fs.existsSync(config.path)){
             console.log(err.toString());
             process.exit(-1);
         }
-        
+
         console.log('Done.'.green);
 
         // remove the module cache, to update the new generated configs
