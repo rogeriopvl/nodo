@@ -14,7 +14,7 @@
       "web": "http://rogeriopvl.com"
     }
   ],
-  "version": "0.4.0",
+  "version": "0.4.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/rogeriopvl/nodo"
@@ -41,6 +41,7 @@
     "nodo": "./bin/nodo",
     "nodo-install": "./bin/nodo-install"
   },
+  "man" :[ "./doc/nodo.1" ],
   "scripts": {
     "install": "./bin/nodo-install",
     "test": "grunt test"
