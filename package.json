@@ -23,7 +23,8 @@
     "nodeunit": "~0.8.1",
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-nodeunit": "~0.2.0"
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-shell": "~0.4.0"
   },
   "dependencies": {
     "sqlite3": "~2.1.12",
@@ -41,7 +42,9 @@
     "nodo": "./bin/nodo",
     "nodo-install": "./bin/nodo-install"
   },
-  "man" :[ "./doc/nodo.1" ],
+  "man": [
+    "./doc/nodo.1"
+  ],
   "scripts": {
     "install": "./bin/nodo-install",
     "test": "grunt test"
