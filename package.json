@@ -41,6 +41,7 @@
     "nodo": "./bin/nodo",
     "nodo-install": "./bin/nodo-install"
   },
+  "man" :[ "./doc/nodo.1" ],
   "scripts": {
     "install": "./bin/nodo-install",
     "test": "grunt test"
