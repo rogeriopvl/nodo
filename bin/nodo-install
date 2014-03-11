@@ -9,10 +9,9 @@
  */
 
 var config = require('../lib/config'),
-    fs = require('fs'),
+    fs = require('fs-extra'),
     path = require('path'),
-    colors = require('colors'),
-    exec = require('child_process').exec;
+    colors = require('colors');
 
 console.log('****************************************');
 console.log('* Running Nodo installation script...');
@@ -21,8 +20,7 @@ console.log('****************************************');
 if (!fs.existsSync(config.path)){
     console.log('Creating config file in ' + config.path + ' ...');
 
-    var cpCommand = 'cp ' + __dirname + '/../samples/nodorc_sample ' + config.path;
-    exec(cpCommand, function(err, stdout, stderr){
+    fs.copy(__dirname + '/../samples/nodorc_sample', config.path, function(err){
         if (err){
             console.log(err.toString());
             process.exit(-1);
@@ -51,8 +49,7 @@ function createDatabase(dbPath){
         if (!fs.existsSync(databaseLocation)){
             console.log('Creating database in ' + databaseLocation);
 
-            var cpCommand = 'cp ' + __dirname + '/../samples/nodo.db_sample ' + dbPath;
-            exec(cpCommand, function(err, stdout, stderr){
+            fs.copy(__dirname + '/../samples/nodo.db_sample', databaseLocation, function(err){
                 if (err){
                     console.log(err.toString());
                     process.exit(-1);
