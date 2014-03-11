@@ -9,6 +9,7 @@
  */
 
 var config = require('../lib/config'),
+    aux = require('../lib/aux'),
     fs = require('fs-extra'),
     path = require('path'),
     colors = require('colors');
@@ -42,9 +43,7 @@ else{
 console.log('Nodo installation is complete.'.green);
 
 function createDatabase(dbPath){
-        // this sucks, path.normalize should  accept the home alias...
-        var databaseLocation = dbPath.replace(/~\//g, process.env.HOME + '/');
-
+        var databaseLocation = aux.expand(dbPath);
 
         if (!fs.existsSync(databaseLocation)){
             console.log('Creating database in ' + databaseLocation);
