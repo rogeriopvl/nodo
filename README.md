@@ -6,6 +6,8 @@ Nodo is a command line TODO application that uses a portable database file. Also
 
 The name "Nodo" comes from the mix of the words Node and TODO.
 
+<iframe src="https://player.vimeo.com/video/42330826" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ## Install
 
 Nodo is available as a package in the npm registry, so you can install it with:
