@@ -7,7 +7,7 @@ Nodo is a command line TODO application that uses a portable database file. Also
 The name "Nodo" comes from the mix of the words Node and TODO.
 
 ### Screencast Demo
-[![Nodo Demo Video](https://i.vimeocdn.com/video/293667303.webp?mw=1920&mh=1080&q=70)](https://vimeo.com/42330826)
+[![Nodo Demo Video](https://i.vimeocdn.com/video/539197203.webp?mw=1920&mh=1080&q=70)](https://vimeo.com/42330826)
 
 ## Install
 
