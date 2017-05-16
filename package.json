@@ -20,17 +20,17 @@
     "url": "https://github.com/rogeriopvl/nodo"
   },
   "devDependencies": {
-    "nodeunit": "~0.8.1",
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-shell": "~0.4.0"
+    "nodeunit": "~0.11.0",
+    "grunt": "~1.0.1",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-nodeunit": "~1.0.0",
+    "grunt-shell": "~2.1.0"
   },
   "dependencies": {
     "sqlite3": "^3.0.5",
-    "insight": "~0.5.2",
+    "insight": "~0.8.4",
     "colors": "^1.0.3",
-    "fs-extra": "~0.16.3"
+    "fs-extra": "~3.0.1"
   },
   "engines": {
     "node": ">=0.8.0"
