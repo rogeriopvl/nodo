@@ -1,5 +1,7 @@
 # Nodo [![Build Status](https://travis-ci.org/rogeriopvl/nodo.png)](https://travis-ci.org/rogeriopvl/nodo)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogeriopvl/nodo.svg)](https://greenkeeper.io/)
+
 ## About
 
 Nodo is a command line TODO application that uses a portable database file. Also, if you are a [Wunderlist][0] user, you can configure Nodo to be a command line interface to Wunderlist's database (only for version 1.* of Wunderlist).
