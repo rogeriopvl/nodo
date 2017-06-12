@@ -20,20 +20,18 @@
     "url": "https://github.com/rogeriopvl/nodo"
   },
   "devDependencies": {
+    "marked-man": "^0.2.1",
     "nodeunit": "~0.8.1",
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-shell": "~0.4.0"
+    "tape": "^4.6.3"
   },
   "dependencies": {
-    "sqlite3": "^3.0.5",
-    "insight": "~0.5.2",
-    "colors": "^1.0.3",
-    "fs-extra": "~0.16.3"
+    "colors": "^1.1.2",
+    "fs-extra": "^3.0.1",
+    "insight": "^0.8.4",
+    "sqlite3": "^3.1.8"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=4.0.0"
   },
   "directories": {
     "lib": "./lib",
@@ -47,8 +45,9 @@
     "./doc/nodo.1"
   ],
   "scripts": {
-    "install": "node ./bin/nodo-install",
-    "test": "grunt test"
+    "install": "./bin/nodo-install",
+    "test": "tape test/*.js",
+    "man": "marked-man README.md > doc/nodo.1"
   },
   "licenses": [
     {
