@@ -22,6 +22,7 @@
   "devDependencies": {
     "marked-man": "^0.2.1",
     "nodeunit": "~0.8.1",
+    "standard": "^10.0.2",
     "tape": "^4.6.3"
   },
   "dependencies": {

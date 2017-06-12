@@ -3,60 +3,59 @@
 /**
  * Post install script that creates config file and local database
  * with the schema and some default tasks.
- *
- * @author Rogério Vicente <rogeriopvl@gmail.com>
- * @license MIT (check the license file)
  */
 
-var config = require('../lib/config'),
-    aux = require('../lib/aux'),
-    fs = require('fs-extra'),
-    path = require('path'),
-    colors = require('colors');
+var config = require('../lib/config')
+var aux = require('../lib/aux')
+var fs = require('fs-extra')
+var path = require('path')
+require('colors')
 
-console.log('****************************************');
-console.log('* Running Nodo installation script...');
-console.log('****************************************');
+console.log('****************************************')
+console.log('* Running Nodo installation script...')
+console.log('****************************************')
 
-if (!fs.existsSync(config.path)){
-    console.log('Creating config file in ' + config.path + ' ...');
+if (!fs.existsSync(config.path)) {
+  console.log('Creating config file in ' + config.path + ' ...')
 
-    fs.copy(__dirname + '/../samples/nodorc_sample', config.path, function(err){
-        if (err){
-            console.log(err.toString());
-            process.exit(-1);
-        }
+  var rcSample = path.join(__dirname, '..', 'samples', 'nodorc_sample')
 
-        console.log('Done.'.green);
+  fs.copy(rcSample, config.path, function(err) {
+    if (err) {
+      console.log(err.toString())
+      process.exit(-1)
+    }
 
-        // remove the module cache, to update the new generated configs
-        delete require.cache[path.resolve(__dirname + '/../lib/config.js')];
-        var config = require('../lib/config');
-        createDatabase(config.file.database.location);
-    });
+    console.log('Done.'.green)
+
+    // remove the module cache, to update the new generated configs
+    delete require
+      .cache[path.resolve(path.join(__dirname, '..', 'lib', 'config.js'))]
+    var config = require('../lib/config')
+    createDatabase(config.file.database.location)
+  })
+} else {
+  console.log('Config file already exists. Skipping...'.yellow)
+  createDatabase(config.file.database.location)
 }
-else{
-    console.log('Config file already exists. Skipping...'.yellow);
-    createDatabase(config.file.database.location);
-}
 
-console.log('Nodo installation is complete.'.green);
+console.log('Nodo installation is complete.'.green)
 
-function createDatabase(dbPath){
-        var databaseLocation = aux.expand(dbPath);
+function createDatabase(dbPath) {
+  var databaseLocation = aux.expand(dbPath)
 
-        if (!fs.existsSync(databaseLocation)){
-            console.log('Creating database in ' + databaseLocation);
+  if (!fs.existsSync(databaseLocation)) {
+    console.log('Creating database in ' + databaseLocation)
 
-            fs.copy(__dirname + '/../samples/nodo.db_sample', databaseLocation, function(err){
-                if (err){
-                    console.log(err.toString());
-                    process.exit(-1);
-                }
-            });
-            console.log('Done.'.green);
-        }
-        else{
-            console.log('Database file already exists. Skipping...'.yellow);
-        }
+    var dbSample = path.join(__dirname, '..', 'samples', 'nodo.db_sample')
+    fs.copy(dbSample, databaseLocation, function(err) {
+      if (err) {
+        console.log(err.toString())
+        process.exit(-1)
+      }
+    })
+    console.log('Done.'.green)
+  } else {
+    console.log('Database file already exists. Skipping...'.yellow)
+  }
 }
